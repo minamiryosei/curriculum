@@ -1,8 +1,7 @@
 package study;
 
-import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.LinkedHashMap;
-import java.util.Map;
 
 /**
  * 本課題では、コレクションフレームワークのList系クラスとMap系クラスの基本的な記述を学びましょう。
@@ -21,16 +20,16 @@ public class Study {
 
     public static void main(String args[]) {
 
-        // ① 定数を全て使って、String型のListを記述してください。
-    	Map <Integer,String> shohinList = new HashMap <Integer,String>();
-    	shohinList.put(0, "バナナ");
-    	shohinList.put(1,"牛乳");
-    	shohinList.put(2, "豚肉");
-    	shohinList.put(3,"コロッケ");
+        // ① 定数を全て使って、String型のListを記述してください。*/
+        ArrayList<String> shohinList = new ArrayList<String>();
+        shohinList.add(SHOP_SHOHIN_00);
+        shohinList.add(SHOP_SHOHIN_01);
+        shohinList.add(SHOP_SHOHIN_02);
+        shohinList.add(SHOP_SHOHIN_03);
 
         // ② 以下の「shopMap.put(shohinList.get(1), 180);」の処理について、コメントを記述してください。
         /*
-         * [牛乳に180円を定義している]
+         * [配列shopMapにshohinListの配列番号１のキーと、１８０という値を登録した]
          *
          */
         LinkedHashMap<String, Integer> shopMap = new LinkedHashMap<String, Integer>();
@@ -41,13 +40,9 @@ public class Study {
 
         // ③ カリキュラムを参考に拡張for文を使って、課題の画像と同じ表示になるよう記述してください。
         // 「shohinList」と「shopMap」が保持する値を上手く利用しましょう。
-        for(String key:shopMap.keySet()) {
-        	Integer value = shopMap.get(key);
-        	System.out.println(key+"="+value+"円になります！");
+        for (String i : shohinList) {
+            System.out.println(i + "=" + shopMap.get(i) + "円になります！");
+
         }
-
-
-
-
     }
 }
