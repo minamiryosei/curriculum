@@ -21,7 +21,7 @@ public class Study {
         Date now = new Date();
 
         // 問① ローカル変数「now」を使用し、本日の日付を表示してください。
-
+        System.out.println(now);
 
         // Calendarクラスのインスタンスを生成
         Calendar calendar = Calendar.getInstance();
