@@ -13,7 +13,10 @@ public class Task1_2 {
 	public static void main(String[] args) {
 
         // ①「JAPAN」、「AMERICA」、「KOREA」を要素の値（初期値）とする配列 countryを作成しなさい。
-        String[] country = {"JAPAN","AMERICA","KOREA"};
+        String[] country = new String[3];
+        country[1] = "JAPAN";
+        country[2] = "AMERICA";
+        country[3] = "KOREA";
         // ② ①で作成した配列の要素数を出力してください。
         System.out.println(country.length);
         /* ③下記の値を保持した、要素数3のStringクラスの配列strArrayを作成しなさい。
@@ -31,7 +34,7 @@ public class Task1_2 {
 
         // ⑥下記の処理について、何をしているのかコメントを記入してください。
         // [intArray配列の1番目の値と4番目の値を足している]
-        System.out.println(intArray[1] + intArray[4]);
+        System.out.println(intArray[0] + intArray[3]);
 
     }
 }
