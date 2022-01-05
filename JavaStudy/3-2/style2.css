@@ -1,51 +1,124 @@
-.clearfix::after {
-  content: "";
-  display: block;
+.wrapper{
+  height:450px;
+  width:400px;
+  margin:0 auto;
+}
+.header{
+  background-color:#141f40;
+  height:100px;
+  width:400px;
+
+}
+.main{
+  width:400px;
+
+}
+.clearfix::after { 
+  content: ''; 
+  display: block; 
   clear: both;
 }
-.wrapper {
-  width: 400px;
-  margin: auto;
+
+.left{
+  height:250px;
+  width:150px;
+  background-color:#80bfa8;
+  float:left;
 }
-.header {
-  height: 100px;
-  background-color: #141f40;
+.right{
+  float:left;
 }
 
-.left {
-  height: 250px;
-  width: 150px;
-  background-color: #80bfa8;
-  float: left;
+.right-top-left{
+  float:left;
 }
-.right {
-  width: 250px;
-  float: right;
+
+.right-top-left-top{
+  height:50px;
+  width:150px;
+  background-color:#dbd400;
 }
-.right-left {
-  float: left;
+
+.right-top-left-bottom{
+  width:150px;
+  height:100px;
+  background-color:#0093b7;
 }
-.right-upper {
-  height: 50px;
-  width: 150px;
-  background-color: #dbd400;
+.right-top-right{
+  float:left;
+  width:100px;
+  height:150px;
+  background-color:#ff9e6b;
 }
-.right-center {
-  height: 100px;
-  width: 150px;
-  background-color: #0093b7;
+.right-bottom{
+  height:100px;
+  width:250px;
+  background-color:#8c2727;
+  
 }
-.right-right {
-  height: 150px;
-  width: 100px;
-  background-color: #ff9e6b;
-  float: left;
+
+.footer{
+  height:100px;
+  width:400px;
+  background-color:#d98d30;
 }
-.right-footer {
-  height: 100px;
-  background-color: #8c2727;
+
+@media screen and (max-width: 767px) {
+  .wrapper{
+    width:300px;
+  }
+  .header{
+    width:300px;
+  }
+  .main{
+    width:300px;
+  }
+  .left{
+    width:100px;
+  }
+  .right-top-left-top{
+    width:125px;
+  }
+  .right-top-left-bottom{
+    width:125px;
+  }
+  .right-top-right{
+    width:75px;
+  }
+  .right-bottom{
+    width:200px;
+  }
+  .footer{
+    width:300px;
+  }
 }
-.footer {
-  height: 100px;
-  background-color: #d98d30;
+
+@media screen and (max-width: 479px){
+  .wrapper{
+    width:150px;
+  }
+  .header{
+    width:150px;
+  }
+  .main{
+    width:150px;
+  }
+  .left{
+    width:150px;
+  }
+  .right-top-left-top{
+    width:150px;
+  }
+  .right-top-left-bottom{
+    width:150px;
+  }
+  .right-top-right{
+    width:150px;
+  }
+  .right-bottom{
+    width:150px;
+  }
+  .footer{
+    width:150px;
+  }
 }
