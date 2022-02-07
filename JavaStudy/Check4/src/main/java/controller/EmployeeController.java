@@ -12,15 +12,19 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
- 
+
+import bean.EmployeeBean;
+import service.EmployeeService;
+
 public class EmployeeController extends HttpServlet {
  public void doPost(HttpServletRequest request, HttpServletResponse response)
  throws ServletException, IOException {
  
  try {
   // 問① index.htmlから送信されたIDとPassWordの値を取得できるように修正しましょう。
- String id = request.getParameter("ここを改修");
- String password = request.getParameter("ここを改修");
+ String id = request.getParameter("id");
+ String password = request.getParameter("password");
+ 
  
  /*
  * IDとPassWordと元に、社員情報を検索する関数の呼び出し、結果をJSPに渡す処理
@@ -28,18 +32,23 @@ public class EmployeeController extends HttpServlet {
  */
  
   // 問② EmployeeServiceクラスをインスタンス化する。
+ EmployeeService employeeService = new EmployeeService();
+ EmployeeBean employeeBean = new EmployeeBean();
  
-  // 問③ EmployeeBeanに、EmployeeServiceよりsearch関数を呼び出し、返り値を格納する。
- 
-  // 問④ nullの部分に適切な引数をセットする。
- request.setAttribute("EmployeeBean", null);
- 
- } catch (Exception e) {
- e.printStackTrace();
- } finally {
- ServletContext context = this.getServletContext();
- RequestDispatcher dispatcher = context.getRequestDispatcher("/index.jsp");
- dispatcher.forward(request, response);
- }
- }
+ // 問③ インスタンス化したEmployeeBeanにEmployeeServiceのsearch関数を代入
+employeeBean = employeeService.search(id, password);
+
+ // 問④ 取得したEmployeeBeanの値をindex.jspに渡すためリクエストスコープにセット
+request.setAttribute("EmployeeBean", employeeBean);
+
+} catch (Exception e) {
+e.printStackTrace();
+} finally {
+ServletContext context = this.getServletContext();
+RequestDispatcher dispatcher = context.getRequestDispatcher("/index.jsp");
+dispatcher.forward(request, response);
 }
+}
+}
+
+
